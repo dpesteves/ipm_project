@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Statistics
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-title>Global</ion-title>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content padding>
+
+    
+    
+        <!-- Segment in content -->
+        <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="category">
+            Category
+          </ion-segment-button>
+          <ion-segment-button value="supermarket">
+            Supermarket
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-navbar>
+            <ion-buttons start>
+              <button ion-button>
+                <ion-icon name="contact"></ion-icon>
+              </button>
+            </ion-buttons>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+            <ion-title>
+              Chose Category
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button (click)="doClick()">
+                <ion-icon name="more"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+        
+
+
+    
+
+</ion-content>
