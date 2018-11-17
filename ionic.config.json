@@ -1,5 +1,7 @@
 {
   "name": "ipmProject",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
