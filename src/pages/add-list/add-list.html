@@ -21,15 +21,29 @@
     (ionCancel)="onCancel($event)">
   </ion-searchbar>
 
+  <ion-list [virtualScroll]="items">
+
+      <ion-item *virtualItem="let item">
+        {{ item.name }}
+      </ion-item>
+    
+    </ion-list>
+
+
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemSelected()">
-      {{ item }} <ion-icon name="arrow-dropdown"></ion-icon> 
-        <ion-list *ngIf="show">
-          <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-            {{ item }} <ion-icon name="arrow-dropdown"></ion-icon> 
-          </button>  
+    <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      {{ item.name }} <ion-icon name="arrow-dropdown"></ion-icon> 
+        <ion-list *ngIf="item.show">
+          <ion-item *ngFor="let snack of snacks" (click)="itemSelected(snack);$event.stopPropagation();">
+            {{ snack.name }} <ion-icon name="arrow-dropdown"></ion-icon>
+            <ion-list *ngIf="snack.show">
+                <ion-item *ngFor="let cookie of cookies" (click)="itemSelected(cookie);$event.stopPropagation();">
+                  {{ cookie.name }} <ion-icon name="arrow-dropdown"></ion-icon> 
+                </ion-item>  
+              </ion-list> 
+          </ion-item>  
         </ion-list>
-    </button>  
+    </ion-item>  
   </ion-list>
 
 </ion-content>
