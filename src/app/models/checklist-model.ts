@@ -1,9 +1,12 @@
-export class ChecklistModel {
+export class ShoppingListModel {
     
     items: any[];
+    Name: string;
+    cretedon: Date;
+    Owners: any[];
 
        constructor(public title: string){
-           this.items = new Array
+           this.items = new Array;
        }
     
        addItem(item){
