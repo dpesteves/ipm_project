@@ -16,4 +16,7 @@ export class ListsPage {
     this.navCtrl.push(ListPage);
   }
 
+  addLists(){
+    
+  }
 }
