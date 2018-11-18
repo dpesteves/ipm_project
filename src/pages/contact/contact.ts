@@ -11,12 +11,7 @@ export class ContactPage {
   checkList : ShoppingListModel
 
   constructor(public navCtrl: NavController) {
-    this.checkList = new ShoppingListModel("Contactos");
-    this.checkList.addItem("Salada");
-    this.checkList.addItem("Couves");
-    this.checkList.addItem("Batatas");
-    this.checkList.addItem("Cenouras");
-    this.checkList.addItem("Tomates");
+
   }
 
   addItem(item){
