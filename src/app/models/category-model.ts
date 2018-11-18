@@ -1,5 +1,7 @@
 import { ProductModel } from './product-model';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class CategoryModel {
 
     Name: string;
@@ -7,7 +9,7 @@ export class CategoryModel {
     children: CategoryModel[];
     products: ProductModel[];
 
-    constructor(public title: string){
+    constructor(title: string){
         this.Name = title;
     }
 
