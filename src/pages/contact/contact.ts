@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {ChecklistModel} from '../../app/models/checklist-model';
 
 @Component({
   selector: 'page-contact',
@@ -7,8 +8,19 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController) {
+  checkList : ChecklistModel
 
+  constructor(public navCtrl: NavController) {
+    this.checkList = new ChecklistModel("Contactos");
+    this.checkList.addItem("Salada");
+    this.checkList.addItem("Couves");
+    this.checkList.addItem("Batatas");
+    this.checkList.addItem("Cenouras");
+    this.checkList.addItem("Tomates");
+  }
+
+  addItem(item){
+    this.checkList.addItem(item);
   }
 
 }

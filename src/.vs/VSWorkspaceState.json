@@ -1,6 +1,15 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     ""
   ],
+=======
+    "",
+    "\\app",
+    "\\pages",
+    "\\pages\\about"
+  ],
+  "SelectedNode": "\\app\\app.component.ts",
+>>>>>>> 3259c0b68a59f446d169040b588dbc4c16469a45
   "PreviewInSolutionExplorer": false
 }

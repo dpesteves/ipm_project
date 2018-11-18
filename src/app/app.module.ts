@@ -13,6 +13,21 @@ import { AddListPage } from '../pages/add-list/add-list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD_zspAhREGFClaJdFx4cEnnMpBElOQtlE",
+  authDomain: "ipmproject2018.firebaseapp.com",
+  databaseURL: "https://ipmproject2018.firebaseio.com",
+  projectId: "ipmproject2018",
+  storageBucket: "ipmproject2018.appspot.com",
+  messagingSenderId: "565734740623"
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +40,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(AppComponent)
   ],
   bootstrap: [IonicApp],
