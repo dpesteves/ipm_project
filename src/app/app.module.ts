@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { ProductModel } from './models/product-model';
 import { CategoryModel, } from './models/category-model';
-import { ShoppingListModel } from './models/checklist-model';
+import { ShoppingListModel } from './models/shoppinglist-model';
 
 import { AppComponent } from './app.component';
 import { StatisticsPage } from '../pages/statistics/statistics';
@@ -49,9 +49,9 @@ import { AddListPage } from '../pages/add-list/add-list';
   providers: [
     StatusBar,
     SplashScreen,
-    ShoppingListModel,
-    CategoryModel,
-    ProductModel,
+    //ShoppingListModel,
+    //CategoryModel,
+    //ProductModel,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

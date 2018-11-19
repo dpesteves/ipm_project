@@ -1,7 +1,8 @@
 import{ CategoryModel} from './category-model'
 import { Injectable } from '@angular/core';
+//import { HttpClientModule } from '@angular/common/http'; 
+//import { HttpModule } from '@angular/http';
 
-@Injectable()
 export class ProductModel {
 
     Name: string;
@@ -16,7 +17,5 @@ export class ProductModel {
         this.Price = price;
         this.Supermarket = supermarket;
         this.Icon = icon;
-    }
-
-    
+    }    
 }

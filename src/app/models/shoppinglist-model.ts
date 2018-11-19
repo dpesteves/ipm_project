@@ -1,22 +1,28 @@
 import { ProductModel } from "./product-model";
 import { Injectable } from '@angular/core';
 
-@Injectable()
 export class ShoppingListModel {
+    
     items: ProductModel[];
     counter: number;
     name: string;
     createdOn: Date;
     owners: any[];
 
+    
     constructor(title: string){
         this.name = title;
-        this.items = [];
+        this.items = new Array<ProductModel>();
         this.counter = 0;
+    }
+
+    setName(name){
+        this.name = name;
     }
 
     addItem(product: ProductModel){
         this.items[this.counter] = product;
+        this.counter++;
     }
 
     removeItem(item){

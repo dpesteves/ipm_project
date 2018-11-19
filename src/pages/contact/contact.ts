@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {ShoppingListModel} from '../../app/models/checklist-model';
+import {ShoppingListModel} from '../../app/models/shoppinglist-model';
 
 @Component({
   selector: 'page-contact',
