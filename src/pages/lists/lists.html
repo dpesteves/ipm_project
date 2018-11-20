@@ -5,21 +5,12 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item (click)="buttonEvent()">
-      Family
-    </ion-item>
-    <ion-item (click)="buttonEvent()">
-      Dinner
-    </ion-item>  
-    <ion-item (click)="buttonEvent()">
-      Friends
-    </ion-item>  
-    <ion-item (click)="buttonEvent()">
-      Some
+  <ion-list >
+    <ion-item *ngFor="let list of lists" (click)="buttonEvent(list.name)">
+      {{ list.name }}
     </ion-item>  
   </ion-list>
-  <ion-fab right bottom>
-    <button ion-fab mini (click)="addList()"><ion-icon name="add"></ion-icon></button>
+  <ion-fab center bottom>
+    <button ion-fab mini (click)="showMenu()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 </ion-content>
