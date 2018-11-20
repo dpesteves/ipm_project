@@ -7,9 +7,10 @@
 <ion-content padding>
   <form (ngSubmit)="addList()">
     <ion-item>
-      <ion-label>List Name</ion-label>
-      <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
+      <ion-label stacked>List Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name" name="name" required></ion-input>
     </ion-item>
-    <button ion-button type="submit" block>Add List</button>
+    <br>
+    <button ion-button class="button" type="submit" block>Add List</button>
   </form>
 </ion-content>

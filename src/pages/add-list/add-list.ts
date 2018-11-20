@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { ShoppingListModel } from '../../app/models/shoppinglist-model';
+import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,7 +9,7 @@ import { ShoppingListModel } from '../../app/models/shoppinglist-model';
 export class AddListPage {
   name: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -18,7 +17,33 @@ export class AddListPage {
   }
 
   addList(){
-    this.viewCtrl.dismiss(this.name);
+    if(this.name != null && this.name != ""){
+      this.presentSuccessAlert();
+      this.viewCtrl.dismiss(this.name);
+    }
+    else{
+      //popup sobre nao ter dados
+      this.presentErrorAlert();
+      console.log("Não tem nada")
+    }
+  }
+
+  presentErrorAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Empty field',
+      subTitle: 'You have to write a name for the list',
+      buttons: ['Dismiss']
+    });
+    alert.present();
+  }
+
+  presentSuccessAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'List added',
+      subTitle: 'List' + this.name + 'added to your lists',
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 
 }

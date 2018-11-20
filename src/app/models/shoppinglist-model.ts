@@ -1,5 +1,4 @@
 import { ProductModel } from "./product-model";
-import { Injectable } from '@angular/core';
 
 export class ShoppingListModel {
     
@@ -8,7 +7,6 @@ export class ShoppingListModel {
     name: string;
     createdOn: Date;
     owners: any[];
-
     
     constructor(title: string){
         this.name = title;
