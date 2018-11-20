@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AppComponent } from './app.component';
+ 
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 import { StatisticsPage } from '../pages/statistics/statistics';
 import { ContactPage } from '../pages/contact/contact';
@@ -15,17 +17,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 import { HttpModule } from '@angular/http';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireModule } from 'angularfire2';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD_zspAhREGFClaJdFx4cEnnMpBElOQtlE",
-  authDomain: "ipmproject2018.firebaseapp.com",
-  databaseURL: "https://ipmproject2018.firebaseio.com",
-  projectId: "ipmproject2018",
-  storageBucket: "ipmproject2018.appspot.com",
-  messagingSenderId: "565734740623"
-};
 
 
 @NgModule({
@@ -41,9 +32,8 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     HttpModule,
-    AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    IonicModule.forRoot(AppComponent)
+    IonicModule.forRoot(AppComponent),
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -13,40 +13,55 @@
 </ion-header>
 
 <ion-content padding>
-
-    
-    
-        <!-- Segment in content -->
-        <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">
-          <ion-segment-button value="category">
-            Category
-          </ion-segment-button>
-          <ion-segment-button value="supermarket">
-            Supermarket
-          </ion-segment-button>
-        </ion-segment>
-
-        <ion-navbar>
-            <ion-buttons start>
-              <button ion-button>
-                <ion-icon name="contact"></ion-icon>
-              </button>
-            </ion-buttons>
-            <button ion-button menuToggle>
-              <ion-icon name="menu"></ion-icon>
-            </button>
-            <ion-title>
-              Chose Category
-            </ion-title>
-            <ion-buttons end>
-              <button ion-button (click)="doClick()">
-                <ion-icon name="more"></ion-icon>
-              </button>
-            </ion-buttons>
-          </ion-navbar>
-        
-
-
-    
-
+  <div padding>
+    <ion-segment [(ngModel)]="Statistics">
+      <ion-segment-button value="Category">
+        Category
+      </ion-segment-button>
+      <ion-segment-button value="Supermarket">
+        Supermarket
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="Statistics">
+    <ion-list *ngSwitchCase="'Category'">
+      <ion-list>
+        <ion-item>
+          <ion-label>Choose category</ion-label>
+          <ion-select [(ngModel)]="Category">
+            <ion-option value="drinks">Drinks</ion-option>
+            <ion-option value="grocery">Grocery</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>      
+      <ion-list>
+          <ion-item>
+            <ion-label>Choose frequency</ion-label>
+            <ion-select [(ngModel)]="Frequency">
+              <ion-option value="perday">By day</ion-option>
+              <ion-option value="grocery">By month</ion-option>
+              <ion-option value="grocery">By year</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+      <ion-card>
+          <ion-card-header>
+            Bar Chart
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #barCanvas></canvas>
+          </ion-card-content>
+      </ion-card>        
+    </ion-list>
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+      ...
+    </ion-list>
+  </div>
 </ion-content>

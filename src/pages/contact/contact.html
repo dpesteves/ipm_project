@@ -7,9 +7,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let list_item of checkList.getElements()">
-      {{list_item.title}}
-   </ion-item>
-  </ion-list>
+
+  <ion-slides class="image-slider" loop="true" slidesPerView="2">
+      <ion-slide *ngFor="let img of images">
+        <img src="../../assets/imgs/{{img}}" class="thumb-img" imageViewer/>
+      </ion-slide>
+  </ion-slides>
 </ion-content>
