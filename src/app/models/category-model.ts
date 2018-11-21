@@ -20,6 +20,9 @@ export class CategoryModel {
     public static SWEETS_SNACKS_ROOT = "Sweets and Snacks";
     //#endregion
     
+    public static NODE = "node";
+    public static ROOT = "Root";
+    public static LEAF = "leaf";
 
     public Name: string;
     Type: string;

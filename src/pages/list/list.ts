@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
 import { AddProductPage } from '../add-product/add-product';
 import { ProductModel } from '../../app/models/product-model';
+import {ShopModel} from '../../app/models/shop-model';
+import {ShoppingListModel} from '../../app/models/shoppinglist-model';
 
 @IonicPage()
 @Component({
@@ -10,10 +12,18 @@ import { ProductModel } from '../../app/models/product-model';
 })
 export class ListPage {
 
-  products: ProductModel[];
+  list_name: string;
+  shop: ShopModel;
+  products: Array<ProductModel>;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams/*, list: ShoppingListModel*/) {
-    this.products = this.navParams.data;
+    this.list_name = this.navParams.get('list');
+    this.shop = this.navParams.get('shop');
+    this.products = this.getListItems();
+    
+
+    debugger;
+
   }
 
   ionViewDidLoad() {
@@ -25,23 +35,17 @@ export class ListPage {
     modal.present();
   }
 
-  loadList(list){
-    this.products = list;
-  }
-
-  removeItem(product_name){
+  getListItems(): Array<ProductModel>{
 
     debugger;
-    var index = 0;
 
-    for(let product of this.products){
+    var local_list = this.shop.getList(this.list_name);
+    return local_list.getElements();
+  }
 
-      if(product.Name == product_name){
-        this.products.splice(index, 1);
-        break;
-      }else
-        index++;
-    }
+  removeItem(product_name: string){
+
+    this.shop.removeListProduct(this.list_name, product_name);
 
   }
   

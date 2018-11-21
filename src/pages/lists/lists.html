@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <ion-list >
-    <ion-item *ngFor="let list of lists" (click)="showList(list.name)">
+    <ion-item *ngFor="let list of shop.lists" (click)="showList(list.name)">
       {{ list.name }}
     </ion-item>  
   </ion-list>

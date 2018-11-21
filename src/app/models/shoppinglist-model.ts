@@ -6,8 +6,7 @@ export class ShoppingListModel {
     public static FRIENDS = "Amigos";
     public static WORK = "Trabalho";
 
-    items: ProductModel[];
-    counter: number;
+    items: Array<ProductModel>;
     name: string;
     createdOn: Date;
     owners: any[];
@@ -15,7 +14,10 @@ export class ShoppingListModel {
     constructor(title: string){
         this.name = title;
         this.items = new Array<ProductModel>();
-        this.counter = 0;
+    }
+
+    getListName(){
+        return this.name;
     }
 
     setName(name){
@@ -23,13 +25,13 @@ export class ShoppingListModel {
     }
 
     addItem(product: ProductModel){
-        this.items[this.counter] = product;
-        this.counter++;
+        this.items.push(product);
     }
 
-    removeItem(item){
+    removeItem(item_name: string){
+
         for(let i = 0; i < this.items.length; i++) {
-            if(this.items[i] == item){
+            if(this.items[i].Name == item_name){
                 this.items.splice(i, 1);
             }
         }

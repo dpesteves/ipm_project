@@ -24,7 +24,7 @@ export class AddProductPage {
     this.categories.push(new CategoryModel("Snacks and sweets", "node"));
     this.categories.push(new CategoryModel("Milk and cheese", "node"));
 
-    this.categories[1].addChild("cookies");
+    //this.categories[1].addChild("cookies");
 
     //this.categories[1].addProduct(title, category, price, supermarket, icon);
 
@@ -36,6 +36,10 @@ export class AddProductPage {
 
   itemSelected(item: Item){
       item.show = !item.show;
+  }
+
+  createProducts(){
+
   }
 
 }
