@@ -13,72 +13,58 @@
 </ion-header>
 
 <ion-content padding>
-<<<<<<< HEAD
+  <div padding>
+    <ion-segment [(ngModel)]="Statistics">
+      <ion-segment-button value="Category">
+        Category
+      </ion-segment-button>
+      <ion-segment-button value="Supermarket">
+        Supermarket
+      </ion-segment-button>
+    </ion-segment>
 
-    
-    
-        <!-- Segment in content -->
-        <ion-segment [(ngModel)]="relationship" color="primary" (ionChange)="segmentChanged($event)">
-          <ion-segment-button value="category">
-            Category
-          </ion-segment-button>
-          <ion-segment-button value="supermarket">
-            Supermarket
-          </ion-segment-button>
-        </ion-segment>
-
+  </div>
+  
+  <div [ngSwitch]="Statistics">
+    <ion-list *ngSwitchCase="'Category'">
+      <ion-list>
         <ion-item>
-          <ion-label>Chose Category...</ion-label>
-          <ion-select interface="popover">
-            <ion-option value="f">Fruit</ion-option>
-            <ion-option value="m">Meat</ion-option>
-            <ion-option value="s">Soda</ion-option>
-            <ion-option value="c">Cookies</ion-option>
+          <ion-label>Choose category</ion-label>
+          <ion-select [(ngModel)]="Category">
+            <ion-option value="drinks">Drinks</ion-option>
+            <ion-option value="grocery">Grocery</ion-option>
           </ion-select>
         </ion-item>
-
-        <ion-item>
-          <ion-label>Chose Frequency...</ion-label>
-          <ion-select interface="popover">
-            <ion-option value="m">Monthly</ion-option>
-            <ion-option value="y">Yearly</ion-option>
-            <ion-option value="h">Halfyearly</ion-option>
-            <ion-option value="w">Weekly</ion-option>
-          </ion-select>
-        </ion-item>
-
-       <!-- <div style = "text-align: center">
-          <h1 style = "font-size : 3rem">
-            {{title}}
-          </h1>
-        </div>
-        <div style = "width:950px">
-        <div  >
-          <h2 style="background-color: rgba(255, 145, 186, 1); font-size:2rem">Line Chart</h2>
-          <canvas id = "lineChart" width="650" height="273" class="chartjs-render-monitor" style="display: block; width: 750px; height: 290px;"></canvas>
-        </div>
-
-        <div style="width:50%">
-        
-        </div> 
-        </div> 
-
-        <ul class="chart">
-          <li>
-            <span style="height:5%" title="ActionScript"></span>
-          </li>
-          <li>
-            <span style="height:70%" title="JavaScript"></span>
-          </li>
-          <li>
-            <span style="height:50%" title="CoffeScript"></span>
-          </li>
-          <li>
-            <span style="height:15%" title="HTML"></span>
-          </li>
-        </ul>     -->
-
-
-    
-
+      </ion-list>      
+      <ion-list>
+          <ion-item>
+            <ion-label>Choose frequency</ion-label>
+            <ion-select [(ngModel)]="Frequency">
+              <ion-option value="perday">By day</ion-option>
+              <ion-option value="grocery">By month</ion-option>
+              <ion-option value="grocery">By year</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+      <ion-card>
+          <ion-card-header>
+            Bar Chart
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #barCanvas></canvas>
+          </ion-card-content>
+      </ion-card>        
+    </ion-list>
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>Ruby</h2>
+      </ion-item>
+      ...
+    </ion-list>
+  </div>
 </ion-content>
+
+
