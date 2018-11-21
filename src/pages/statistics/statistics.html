@@ -26,25 +26,56 @@
           </ion-segment-button>
         </ion-segment>
 
-        <ion-navbar>
-            <ion-buttons start>
-              <button ion-button>
-                <ion-icon name="contact"></ion-icon>
-              </button>
-            </ion-buttons>
-            <button ion-button menuToggle>
-              <ion-icon name="menu"></ion-icon>
-            </button>
-            <ion-title>
-              Chose Category
-            </ion-title>
-            <ion-buttons end>
-              <button ion-button (click)="doClick()">
-                <ion-icon name="more"></ion-icon>
-              </button>
-            </ion-buttons>
-          </ion-navbar>
+        <ion-item>
+          <ion-label>Chose Category...</ion-label>
+          <ion-select interface="popover">
+            <ion-option value="f">Fruit</ion-option>
+            <ion-option value="m">Meat</ion-option>
+            <ion-option value="s">Soda</ion-option>
+            <ion-option value="c">Cookies</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Chose Frequency...</ion-label>
+          <ion-select interface="popover">
+            <ion-option value="m">Monthly</ion-option>
+            <ion-option value="y">Yearly</ion-option>
+            <ion-option value="h">Halfyearly</ion-option>
+            <ion-option value="w">Weekly</ion-option>
+          </ion-select>
+        </ion-item>
+
+       <!-- <div style = "text-align: center">
+          <h1 style = "font-size : 3rem">
+            {{title}}
+          </h1>
+        </div>
+        <div style = "width:950px">
+        <div  >
+          <h2 style="background-color: rgba(255, 145, 186, 1); font-size:2rem">Line Chart</h2>
+          <canvas id = "lineChart" width="650" height="273" class="chartjs-render-monitor" style="display: block; width: 750px; height: 290px;"></canvas>
+        </div>
+
+        <div style="width:50%">
         
+        </div> 
+        </div> 
+
+        <ul class="chart">
+          <li>
+            <span style="height:5%" title="ActionScript"></span>
+          </li>
+          <li>
+            <span style="height:70%" title="JavaScript"></span>
+          </li>
+          <li>
+            <span style="height:50%" title="CoffeScript"></span>
+          </li>
+          <li>
+            <span style="height:15%" title="HTML"></span>
+          </li>
+        </ul>     -->
 
 
     
