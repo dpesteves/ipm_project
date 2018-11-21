@@ -4,11 +4,23 @@ export class CategoryModel {
 
     Name: string;
     Type: string;
-    children: CategoryModel[];
-    products: ProductModel[];
+    children = new Array<CategoryModel>();
+    products = new Array<ProductModel>();
+    childrenCount: number;
 
-    constructor(title: string){
-        this.Name = title;
+    constructor(name: string, type: string){
+        this.Name = name;
+        this.Type = type;
+        this.childrenCount = 0;
+    }
+
+    addChild(name: string){
+        if(this.Type == "node")
+            this.children.push(new CategoryModel(name, "leaf"));
+    }
+
+    addProduct(){
+
     }
 
 }
