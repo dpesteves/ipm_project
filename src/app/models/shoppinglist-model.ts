@@ -2,6 +2,10 @@ import { ProductModel } from "./product-model";
 
 export class ShoppingListModel {
     
+    public static FAMILY = "Familia";
+    public static FRIENDS = "Amigos";
+    public static WORK = "Trabalho";
+
     items: ProductModel[];
     counter: number;
     name: string;
@@ -45,6 +49,10 @@ export class ShoppingListModel {
 
     getElements(){
         return this.items;
+    }
+
+    bullkAdd(products_in : Array<ProductModel>){
+        this.items = products_in;
     }
        
 }
