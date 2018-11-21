@@ -28,5 +28,21 @@ export class ListPage {
   loadList(list){
     this.products = list;
   }
+
+  removeItem(product_name){
+
+    debugger;
+    var index = 0;
+
+    for(let product of this.products){
+
+      if(product.Name == product_name){
+        this.products.splice(index, 1);
+        break;
+      }else
+        index++;
+    }
+
+  }
   
 }

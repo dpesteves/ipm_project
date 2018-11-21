@@ -1,10 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { AppComponent } from './app.component';
+ 
 
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 
-import { AppComponent } from './app.component';
 import { StatisticsPage } from '../pages/statistics/statistics';
 import { ContactPage } from '../pages/contact/contact';
 import { ListsPage } from '../pages/lists/lists';
