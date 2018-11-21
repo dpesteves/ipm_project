@@ -26,7 +26,7 @@ export class ShopModel{
 
     constructor() {
 
-        debugger;
+        
 
         this.lists = new Array<ShoppingListModel>();
 
@@ -52,6 +52,8 @@ export class ShopModel{
         this.buildCategoryLeafs();
         this.buildCategoryRoots();
         this.buildDemoLists();
+
+        debugger;
         
     }
 
@@ -139,18 +141,21 @@ export class ShopModel{
     }
         
         
-    buildCategoryRoots(){   
-        var category = new CategoryModel(CategoryModel.DARRY_ROOT, "root");
+    buildCategoryRoots(){
+        
+        debugger;
+        
+        var category = new CategoryModel(CategoryModel.DARRY_ROOT, CategoryModel.ROOT);
         category.addChild(this.findCategory(CategoryModel.MILK_LEAF, this.category_leafs)); //MILK
         category.addChild(this.findCategory(CategoryModel.Cheese_LEAF, this.category_leafs)); //Cheese
         category.addChild(this.findCategory(CategoryModel.YOUGURT_LEAF, this.category_leafs)); //Yougurt
         this.category_roots.push(category);
     
-        var category = new CategoryModel(CategoryModel.SWEETS_SNACKS_ROOT, "root");
+        var category = new CategoryModel(CategoryModel.SWEETS_SNACKS_ROOT, CategoryModel.ROOT);
         category.addChild(this.findCategory(CategoryModel.COOKIES_LEAF, this.category_leafs)); //Cookies
         this.category_roots.push(category);
     
-        category = new CategoryModel(CategoryModel.BEVERAGES_ROOT, "node");
+        category = new CategoryModel(CategoryModel.BEVERAGES_ROOT, CategoryModel.ROOT);
         category.addChild(this.findCategory(CategoryModel.BEER_LEAF, this.category_leafs)); //Beer
         category.addChild(this.findCategory(CategoryModel.WINE_LEAF, this.category_leafs));//Wine
         category.addChild(this.findCategory(CategoryModel.SODA_LEAF, this.category_leafs)); //
@@ -158,8 +163,6 @@ export class ShopModel{
     }
 
     buildDemoLists(){
-
-        debugger;
 
         this.lists.push(new ShoppingListModel(ShoppingListModel.FAMILY));
         this.lists.push(new ShoppingListModel(ShoppingListModel.FRIENDS));
@@ -172,15 +175,23 @@ export class ShopModel{
     }
 
     findCategory(category_name: string, category_level: Array<CategoryModel>): CategoryModel{
+
+
+        for(let element of category_level){
+            if(element.Name == category_name)
+            return element;
+        }
+
+        return null;
     
-        category_level.forEach((element) => {
+        /*category_level.forEach((element) => {
     
             if(element.Name == category_name)
             return element;
     
         });
     
-        return null;
+        return null;*/
     }
 
     getCategoriesByType(type: string): Array<CategoryModel>{
@@ -200,7 +211,7 @@ export class ShopModel{
 
     getList(list_name : string): ShoppingListModel{
 
-        debugger;
+        
 
         for(let element of this.lists){
             if(element.name == list_name)

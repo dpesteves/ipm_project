@@ -26,31 +26,36 @@ export class CategoryModel {
 
     public Name: string;
     Type: string;
-    children = new Array<CategoryModel>();
+    public children = new Array<CategoryModel>();
     products = new Array<ProductModel>();
     childrenCount: number;
+    show: boolean;
 
     constructor(name: string, type: string){
         this.Name = name;
         this.Type = type;
         this.childrenCount = 0;
+
+        this.show = false;
+
     }
 
     addChild(category: CategoryModel){
-        if(this.Type == "node")
+        if(this.Type == CategoryModel.ROOT)
             this.children.push(category);
     }
 
     addProduct(product: ProductModel){
         
-        if(this.Type == "leaf"){
+        if(this.Type == CategoryModel.LEAF){
             this.products.push(product);
         }
     }
 
     bulkProducts(products_in: Array<ProductModel>){
 
-        if(this.Type == "leaf"){
+
+        if(this.Type == CategoryModel.LEAF){
             this.products = products_in;
         }
     }

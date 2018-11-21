@@ -22,8 +22,6 @@ export class ListPage {
     this.products = this.getListItems();
     
 
-    debugger;
-
   }
 
   ionViewDidLoad() {
@@ -31,13 +29,19 @@ export class ListPage {
   }
 
   showMenu(){
-    const modal = this.modalCtrl.create(AddProductPage);
+    const modal = this.modalCtrl.create(AddProductPage, {
+      shop: this.shop
+    });
+
     modal.present();
+
+    modal.onDidDismiss(data => {
+      this.products.push(data);
+    })
+
   }
 
   getListItems(): Array<ProductModel>{
-
-    debugger;
 
     var local_list = this.shop.getList(this.list_name);
     return local_list.getElements();

@@ -16,8 +16,6 @@ export class ListsPage {
   shop: ShopModel;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public params: NavParams) {
-
-    debugger;
     
     this.shop = new ShopModel();
 
