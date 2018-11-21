@@ -23,7 +23,7 @@ export class ListsPage {
     
     this.counter = 3;
 
-    this.lists[0].addItem(new ProductModel("Oreo1", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    /*this.lists[0].addItem(new ProductModel("Oreo1", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[0].addItem(new ProductModel("Oreo2", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[0].addItem(new ProductModel("Oreo3", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[1].addItem(new ProductModel("Cuetara1", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
@@ -32,6 +32,7 @@ export class ListsPage {
     this.lists[2].addItem(new ProductModel("Filipinos1", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[2].addItem(new ProductModel("Filipinos2", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[2].addItem(new ProductModel("Filipinos3", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    */
   }
 
   showList(name: string){
@@ -59,5 +60,10 @@ export class ListsPage {
     this.lists[this.counter] = new ShoppingListModel(listName);
     this.counter++;
   }
+
+  buildCategoryLeafs(){
+
+  }
+
 
 }

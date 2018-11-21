@@ -7,6 +7,7 @@ import { IonicPage, NavController, NavParams, ViewController, AlertController } 
   templateUrl: 'add-list.html',
 })
 export class AddListPage {
+  
   name: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public alertCtrl: AlertController) {
@@ -40,7 +41,11 @@ export class AddListPage {
   presentSuccessAlert() {
     let alert = this.alertCtrl.create({
       title: 'List added',
+<<<<<<< HEAD
       subTitle: 'List ' + this.name + ' was added to your Lists',
+=======
+      subTitle: 'List ' + this.name + ' added to your lists',
+>>>>>>> d882ab03fa29014b10e056a5efb6726e70285404
       buttons: ['Dismiss']
     });
     alert.present();

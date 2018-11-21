@@ -3,14 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AppComponent } from './app.component';
  
-import { IonicImageViewerModule } from 'ionic-img-viewer';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { HttpModule } from '@angular/http';
 
-import { ProductModel } from './models/product-model';
-import { CategoryModel, } from './models/category-model';
-import { ShoppingListModel } from './models/shoppinglist-model';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 import { StatisticsPage } from '../pages/statistics/statistics';
 import { ContactPage } from '../pages/contact/contact';
@@ -19,6 +13,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ListPage } from '../pages/list/list';
 import { AddProductPage } from '../pages/add-product/add-product';
 import { AddListPage } from '../pages/add-list/add-list';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
+
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({

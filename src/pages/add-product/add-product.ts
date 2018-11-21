@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ProductModel } from '../../app/models/product-model';
+import { CategoryModel } from '../../app/models/category-model';
 
 interface Item {
   name: string,
@@ -13,24 +15,19 @@ interface Item {
 })
 export class AddProductPage {
 
-  items: Item[];
-  snacks: Item[];
-  cookies: Item[];
+  categories = new Array<CategoryModel>();
+  products = new Array<ProductModel>();
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.items = [
-      {name: "meat and fish", show: false},
-      {name: "snacks and sweets", show: false},
-      {name: "milk and cheese", show: false}
-    ];
-    this.snacks = [
-      {name: "cookies", show: false}
-    ]
-    this.cookies = [
-      {name: "chocolate", show: false},
-      {name: "salty", show: false},
-      {name: "butter", show: false}
-    ]
+
+    this.categories.push(new CategoryModel("Meat and fish", "node"));
+    this.categories.push(new CategoryModel("Snacks and sweets", "node"));
+    this.categories.push(new CategoryModel("Milk and cheese", "node"));
+
+    this.categories[1].addChild("cookies");
+
+    this.categories[1].addProduct(title, category, price, supermarket, icon);
+
   }
 
   ionViewDidLoad() {
