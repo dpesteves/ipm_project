@@ -15,26 +15,13 @@ export class ListsPage {
   counter:number;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public params: NavParams) {
-    /*var list1 = new ShoppingListModel();
-    list1.setName("familia");
-    var list2 = new ShoppingListModel();
-    list2.setName("jantar");
-    var list3 = new ShoppingListModel();
-    list3.setName("amigos");*/
-    
     this.lists = new Array<ShoppingListModel>();
 
-    //this.lists[0] = list1; this.lists[1] = list2; this.lists[2] = list3;
-    
     this.lists = [new ShoppingListModel("familia"), new ShoppingListModel("jantar"), new ShoppingListModel("amigos")];
     console.log(this.lists[0]);
     
-    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[0].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-
     this.counter = 3;
 
-    /*
     this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
@@ -44,26 +31,25 @@ export class ListsPage {
     this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
     this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    */
   }
 
-  buttonEvent(name: string){
-    debugger;
+  showList(name: string){
     let arg;
-    switch(name){
-      case "familia": { arg = this.lists[0]; break; }
-      case "jantar": { arg = this.lists[1]; break; }
-      case "amigos": { arg = this.lists[2]; break; }
-      default: { break; }
+    for (let list of this.lists){
+      if(name == list.name)
+        arg=list;
     }
-    //this.navCtrl.push(ListPage, arg);
-    this.navCtrl.push(ListPage, arg.getElements());
+    if(arg != null)
+      this.navCtrl.push(ListPage, arg.getElements());
+    else
+      this.navCtrl.push(ListPage);
   }
 
   showMenu(){
     const modal = this.modalCtrl.create(AddListPage, 0);
     modal.onDidDismiss(data => {
-      this.addList(data);
+      if(data != null)
+        this.addList(data);
     });
     modal.present();
   }
@@ -72,4 +58,5 @@ export class ListsPage {
     this.lists[this.counter] = new ShoppingListModel(listName);
     this.counter++;
   }
+
 }

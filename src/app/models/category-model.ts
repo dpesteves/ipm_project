@@ -1,5 +1,4 @@
 import { ProductModel } from './product-model';
-import { Injectable } from '@angular/core';
 
 export class CategoryModel {
 

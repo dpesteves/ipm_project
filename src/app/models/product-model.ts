@@ -1,7 +1,4 @@
-import{ CategoryModel} from './category-model'
-import { Injectable } from '@angular/core';
-//import { HttpClientModule } from '@angular/common/http'; 
-//import { HttpModule } from '@angular/http';
+import{ CategoryModel} from './category-model';
 
 export class ProductModel {
 
