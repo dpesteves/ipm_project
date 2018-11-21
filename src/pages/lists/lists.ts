@@ -11,26 +11,24 @@ import { CategoryModel } from '../../app/models/category-model';
   templateUrl: 'lists.html'
 })
 export class ListsPage {
-  lists: ShoppingListModel[];
+  lists = new Array<ShoppingListModel>();
   counter:number;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public params: NavParams) {
-    this.lists = new Array<ShoppingListModel>();
-
     this.lists = [new ShoppingListModel("familia"), new ShoppingListModel("jantar"), new ShoppingListModel("amigos")];
     console.log(this.lists[0]);
     
     this.counter = 3;
 
-    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha", "leaf"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
   }
 
   showList(name: string){
