@@ -17,20 +17,21 @@ export class ListsPage {
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public params: NavParams) {
     this.lists = new Array<ShoppingListModel>();
 
-    this.lists = [new ShoppingListModel("familia"), new ShoppingListModel("jantar"), new ShoppingListModel("amigos")];
+    this.lists = [new ShoppingListModel("Familia"), new ShoppingListModel("Jantar"), new ShoppingListModel("Amigos")];
+    
     console.log(this.lists[0]);
     
     this.counter = 3;
 
-    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[0].addItem(new ProductModel("oreo", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[1].addItem(new ProductModel("cuetara", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
-    this.lists[2].addItem(new ProductModel("filipinos", new CategoryModel("bolacha"), 1, "pingo doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[0].addItem(new ProductModel("Oreo1", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[0].addItem(new ProductModel("Oreo2", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[0].addItem(new ProductModel("Oreo3", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[1].addItem(new ProductModel("Cuetara1", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[1].addItem(new ProductModel("Cuetara2", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[1].addItem(new ProductModel("Cuetara3", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[2].addItem(new ProductModel("Filipinos1", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[2].addItem(new ProductModel("Filipinos2", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
+    this.lists[2].addItem(new ProductModel("Filipinos3", new CategoryModel("bolacha"), 1, "Pingo Doce", "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/154a0c46491117.58ccb7bb92924.png"));
   }
 
   showList(name: string){

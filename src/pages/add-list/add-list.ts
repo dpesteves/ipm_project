@@ -40,7 +40,7 @@ export class AddListPage {
   presentSuccessAlert() {
     let alert = this.alertCtrl.create({
       title: 'List added',
-      subTitle: 'List' + this.name + 'added to your lists',
+      subTitle: 'List ' + this.name + ' was added to your Lists',
       buttons: ['Dismiss']
     });
     alert.present();

@@ -23,6 +23,7 @@
       <h2>{{product.Name}}</h2>
       <p>{{product.Price}}</p>
       <button ion-button clear item-end>View</button>
+      <button ion-button item-end (click)="removeItem(product.Name)" >Remove</button>
     </ion-item>
   </ion-list>
   <ion-fab center bottom>
