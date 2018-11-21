@@ -4,6 +4,7 @@ import { AddProductPage } from '../add-product/add-product';
 import { ProductModel } from '../../app/models/product-model';
 import {ShopModel} from '../../app/models/shop-model';
 import {ShoppingListModel} from '../../app/models/shoppinglist-model';
+import {ProductDetailPage} from '../../pages/product-detail/product-detail'
 
 @IonicPage()
 @Component({
@@ -51,6 +52,20 @@ export class ListPage {
 
     this.shop.removeListProduct(this.list_name, product_name);
 
+  }
+
+  showProductDetail(name: string){
+    let arg;
+    for (let product of this.products){
+      if(name == product.Name)
+        arg=product;
+    }
+    if(arg != null)
+      this.navCtrl.push(ProductDetailPage, {
+        product: arg,
+      });
+    else
+      this.navCtrl.push(ProductDetailPage);
   }
   
 }

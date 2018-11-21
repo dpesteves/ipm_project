@@ -7,6 +7,7 @@ export class ProductModel {
     Price: number;
     Supermarket: string;
     Icon: string;
+    Quantity: number;
 
     constructor(title: string, category: string, price: number, supermarket: string, icon: string){
         this.Name = title;
@@ -14,5 +15,10 @@ export class ProductModel {
         this.Price = price;
         this.Supermarket = supermarket;
         this.Icon = icon;
-    }    
+        this.Quantity = 1;
+    }
+    
+    addQuantity(){
+        this.Quantity++;
+    }
 }

@@ -1,16 +1,18 @@
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <!--<ion-menu-button></ion-menu-button>-->
     </ion-buttons>
-    <ion-title>Profile</ion-title>
+    <ion-title>Detalhe do Produto</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="currentUser | async as profile">
+<ion-content>
   <div class="user-photo" padding-top>
     <ion-avatar>
-      <img [src]="profile.photoURL || '/assets/images/noavatar.png'">
+      <!--<img [src]="product.icon || '/assets/images/noavatar.png'">-->
+      <img src={{product.Icon}}>
     </ion-avatar>
   </div>
 
@@ -18,16 +20,26 @@
     <ion-item>
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>
-        <p>Display Name</p>
-        <h2>{{profile.displayName}}</h2>
+        <p>Nome do Produto</p>
+        <h2>{{product.Name}}</h2>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-icon name="mail" slot="start"></ion-icon>
       <ion-label>
-        <p>Email</p>
-        <h2>{{profile.email}}</h2>
+        <p>Superficie Comercial</p>
+        <h2>{{product.Supermarket}}</h2>
       </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="price" slot="start"></ion-icon>
+      <ion-label>
+        <p>Preço</p>
+        <h2>{{product.Price}} $</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" [placeholder]="product.Quantity"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -32,7 +32,7 @@ import { HttpModule } from '@angular/http';
     ListPage,
     AddListPage,
     AddProductPage,
-    //ProductDetailPage
+    ProductDetailPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +50,7 @@ import { HttpModule } from '@angular/http';
     ListPage,
     AddListPage,
     AddProductPage,
-    //ProductDetailPage
+    ProductDetailPage
   ],
   providers: [
     StatusBar,

@@ -70,7 +70,7 @@ export class ShopModel{
         this.cookie_products.push(new ProductModel("Chipmix - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty"));
         this.cookie_products.push(new ProductModel("Chipmix - Lidl", "Cookies", 1.5, "Lidl", "empty"));
 
-        this.soda_products.push(new ProductModel("Sumol - Continente", "Soda", 1.75, "Continente", "empty"));
+        this.soda_products.push(new ProductModel("Sumol - Continente", "Soda", 1.75, "Continente", "../../assets/imgs/3.jpg"));
         this.soda_products.push(new ProductModel("Sumol - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty"));
         this.soda_products.push(new ProductModel("Sumol - Lidl", "Soda", 1.75, "Lidl", "empty"));
 
