@@ -24,14 +24,7 @@
     "@ionic-native/splash-screen": "~4.15.0",
     "@ionic-native/status-bar": "~4.15.0",
     "@ionic/storage": "2.2.0",
-<<<<<<< HEAD
-    "angularfire2": "^4.0.0-rc0",
     "chart.js": "^2.7.3",
-    "compass": "^0.1.1",
-    "compass-mixins": "^0.12.10",
-=======
-    "chart.js": "^2.7.3",
->>>>>>> 0c4026cc20f9137e62bd53f5717113a17acbccb5
     "cordova-android": "7.1.2",
     "cordova-ios": "4.5.5",
     "cordova-plugin-device": "^2.0.2",

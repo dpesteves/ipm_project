@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>list</ion-title>
+    <ion-title>{{this.list_name}} - Total: {{this.shop.getList(this.list_name).calculateTotalPrice()}}$</ion-title>
   </ion-navbar>
 
 </ion-header>

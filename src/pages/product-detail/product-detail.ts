@@ -28,4 +28,11 @@ export class ProductDetailPage {
     console.log('ionViewDidLoad ProductDetailPage');
   }
 
+  OnInput(val){
+    
+    var quantity = Number(val);
+    this.product.editQuantity(quantity);
+
+  }
+
 }

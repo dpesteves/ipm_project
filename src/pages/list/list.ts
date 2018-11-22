@@ -21,7 +21,6 @@ export class ListPage {
     this.list_name = this.navParams.get('list');
     this.shop = this.navParams.get('shop');
     this.products = this.getListItems();
-    
 
   }
 
@@ -37,7 +36,10 @@ export class ListPage {
     modal.present();
 
     modal.onDidDismiss(data => {
-      this.products.push(data);
+
+      this.shop.getList(this.list_name).addItem(data);
+
+      //this.products.push(data);
     })
 
   }
@@ -49,6 +51,8 @@ export class ListPage {
   }
 
   removeItem(product_name: string){
+
+    this.shop.getList(this.list_name).removeItem(product_name);
 
     this.shop.removeListProduct(this.list_name, product_name);
 

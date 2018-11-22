@@ -8,6 +8,7 @@ export class ProductModel {
     Supermarket: string;
     Icon: string;
     Quantity: number;
+    initial_price: number;
 
     constructor(title: string, category: string, price: number, supermarket: string, icon: string){
         this.Name = title;
@@ -16,9 +17,17 @@ export class ProductModel {
         this.Supermarket = supermarket;
         this.Icon = icon;
         this.Quantity = 1;
+        this.initial_price = price;
     }
     
     addQuantity(){
         this.Quantity++;
+    }
+
+    editQuantity(val){
+
+        this.Quantity = val;
+        this.Price = this.initial_price * this.Quantity;
+
     }
 }
