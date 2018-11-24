@@ -12,6 +12,19 @@
 
 </ion-header>
 
+<html>
+  <head>
+    <link rel="stylesheet" href="statistics.scss">
+    <title>Bar Chart</title>
+  </head>
+  <body>
+    <h1>Bar Chart using d3.js</h1>
+    <svg class="bar-chart"></svg>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="createChart.ts"></script>
+  </body>
+</html>
+
 <ion-content padding>
   <div padding>
     <ion-segment [(ngModel)]="Statistics">
@@ -24,7 +37,7 @@
     </ion-segment>
 
   </div>
-  
+
   <div [ngSwitch]="Statistics">
     <ion-list *ngSwitchCase="'Category'">
       <ion-list>
@@ -55,14 +68,21 @@
           </ion-card-content>
       </ion-card>        
     </ion-list>
-    <ion-list *ngSwitchCase="'puppies'">
+    <ion-list *ngSwitchCase="'Supermarket'">
       <ion-item>
-        <ion-thumbnail item-start>
+     <!--->>  <ion-thumbnail item-start>
           <img src="img/thumbnail-puppy-1.jpg">
         </ion-thumbnail>
-        <h2>Ruby</h2>
-      </ion-item>
-      ...
+        <h2>Ruby</h2> -->
+      </ion-item> 
+      <ion-card> 
+        <ion-card-header>
+          Pie Chart
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #pieCanvas></canvas>
+        </ion-card-content>
+    </ion-card>  
     </ion-list>
   </div>
 </ion-content>

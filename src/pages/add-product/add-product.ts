@@ -26,7 +26,7 @@ export class AddProductPage {
 
     this.categories[1].addChild("cookies");
 
-    this.categories[1].addProduct(title, category, price, supermarket, icon);
+   // this.categories[1].addProduct(title, category, price, supermarket, icon);
 
   }
 

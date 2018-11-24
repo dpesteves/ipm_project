@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import * as Chart from 'chart.js'
 
+var ctx = document.getElementById("myChart");
+
 /*interface xAxes {
   time: string
 }
@@ -18,12 +20,14 @@ interface yAxes {
 export class StatisticsPage {
 
   LineChart : any;
-
+  PieChart : any;
+  Chart : any;
   constructor(public navCtrl: NavController) {
   
   }
 
-  createChart(){
+
+  createLineChart(){
     this.LineChart = new Chart('lineChart', {
       type : 'line',
       data:{
@@ -40,6 +44,33 @@ export class StatisticsPage {
       },
   });
 }
-  
+
+
+createPieChart(){
+  this.PieChart = new Chart("pieChart" , {
+    type: 'pie',
+    data: {
+      labels:["Pingo doce", "Continente", "Lidl"],
+      datasets: [{
+        label : "amount payed",
+        data: [250,300,400],
+        backgroundColor: [
+          "rgba(255,99,132,1)",
+          "rgba(54,162,235,1)",
+          "rgba(255,206,86,1)",
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      title:{
+        text: "Pie Chart",
+        display:true
+      },
+      responsive: false,
+    }
+  });
+}
+
 
 }
