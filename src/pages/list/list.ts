@@ -3,7 +3,6 @@ import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angu
 import { AddProductPage } from '../add-product/add-product';
 import { ProductModel } from '../../app/models/product-model';
 import {ShopModel} from '../../app/models/shop-model';
-import {ShoppingListModel} from '../../app/models/shoppinglist-model';
 import {ProductDetailPage} from '../../pages/product-detail/product-detail'
 
 @IonicPage()
@@ -36,10 +35,8 @@ export class ListPage {
     modal.present();
 
     modal.onDidDismiss(data => {
-
-      this.shop.getList(this.list_name).addItem(data);
-
-      //this.products.push(data);
+      if(data != null)
+        this.shop.getList(this.list_name).addItem(data);
     })
 
   }

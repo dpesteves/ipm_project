@@ -20,12 +20,8 @@ export class AddProductPage {
   categories: Array<CategoryModel>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
-
-    debugger;
-
     this.shop = navParams.get('shop');
     this.categories = this.shop.getCategoriesByType(CategoryModel.ROOT);
-
   }
 
   ionViewDidLoad() {

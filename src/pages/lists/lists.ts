@@ -3,7 +3,6 @@ import { NavController, ModalController, NavParams } from 'ionic-angular';
 import { ListPage } from '../list/list';
 import { AddListPage } from '../add-list/add-list';
 import { ShoppingListModel } from '../../app/models/shoppinglist-model';
-import { ProductModel } from '../../app/models/product-model';
 import { CategoryModel } from '../../app/models/category-model';
 import {ShopModel} from '../../app/models/shop-model'
 

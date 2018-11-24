@@ -25,9 +25,6 @@ export class ShopModel{
     //#endregion
 
     constructor() {
-
-        
-
         this.lists = new Array<ShoppingListModel>();
 
         //#region Initializing Product lists
@@ -53,8 +50,6 @@ export class ShopModel{
         this.buildCategoryRoots();
         this.buildDemoLists();
 
-        debugger;
-        
     }
 
     createProducts(){
@@ -105,11 +100,9 @@ export class ShopModel{
         this.wine_products.push(new ProductModel("Porto - Continente", "Beer and Wine", 10, "Continente", "empty"));
         this.wine_products.push(new ProductModel("Porto - Pingo Doce", "Beer and Wine", 15, "Pingo Doce", "empty"));
         this.wine_products.push(new ProductModel("Porto - Lidl", "Beer and Wine", 7, "Lidl", "empty"));
-        
     }
 
     buildCategoryLeafs(){
-    
         var category = new CategoryModel(CategoryModel.COOKIES_LEAF, "leaf");
         category.bulkProducts(this.cookie_products);
         this.category_leafs.push(category);
@@ -137,14 +130,10 @@ export class ShopModel{
         category = new CategoryModel(CategoryModel.WINE_LEAF, "leaf");
         category.bulkProducts(this.wine_products);
         this.category_leafs.push(category);
-    
     }
         
         
     buildCategoryRoots(){
-        
-        debugger;
-        
         var category = new CategoryModel(CategoryModel.DARRY_ROOT, CategoryModel.ROOT);
         category.addChild(this.findCategory(CategoryModel.MILK_LEAF, this.category_leafs)); //MILK
         category.addChild(this.findCategory(CategoryModel.Cheese_LEAF, this.category_leafs)); //Cheese
@@ -175,34 +164,21 @@ export class ShopModel{
     }
 
     findCategory(category_name: string, category_level: Array<CategoryModel>): CategoryModel{
-
-
         for(let element of category_level){
             if(element.Name == category_name)
             return element;
         }
 
         return null;
-    
-        /*category_level.forEach((element) => {
-    
-            if(element.Name == category_name)
-            return element;
-    
-        });
-    
-        return null;*/
     }
 
     getCategoriesByType(type: string): Array<CategoryModel>{
-
         if(type == CategoryModel.LEAF)
             return this.category_leafs;
         else if(type == CategoryModel.ROOT)
             return this.category_roots;
         else
             return null;
-
     }
 
     getDemoLists(): Array<ShoppingListModel>{
@@ -210,33 +186,18 @@ export class ShopModel{
     }
 
     getList(list_name : string): ShoppingListModel{
-
-        
-
         for(let element of this.lists){
             if(element.name == list_name)
                 return element;
         }
 
         return null;
-
-        /*this.lists.forEach((element) => {
-            
-            if(element.name == list_name)
-                return element;
-    
-        });
-
-        return null;*/
-
     }
 
     removeListProduct(list_name: string, product_name: string){
-
         var list = this.getList(list_name);
 
         list.removeItem(product_name);
-
     }
-
+    
 }

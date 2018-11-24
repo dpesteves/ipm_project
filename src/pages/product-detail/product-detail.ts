@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {ProductModel} from '../../app/models/product-model'
+import { ProductModel } from '../../app/models/product-model'
 
 /**
  * Generated class for the ProductDetailPage page.
