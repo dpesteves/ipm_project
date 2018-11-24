@@ -22,16 +22,16 @@
   </ion-searchbar>
 
   <ion-list>
-    <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-      {{ item.name }} <ion-icon name="arrow-dropdown"></ion-icon> 
-        <ion-list *ngIf="item.show">
-          <ion-item *ngFor="let snack of snacks" (click)="itemSelected(snack);$event.stopPropagation();">
-            {{ snack.name }} <ion-icon name="arrow-dropdown"></ion-icon>
-            <ion-list *ngIf="snack.show">
-                <ion-item *ngFor="let cookie of cookies" (click)="itemSelected(cookie);$event.stopPropagation();">
-                  {{ cookie.name }} <ion-icon name="arrow-dropdown"></ion-icon> 
+    <ion-item *ngFor="let category of categories" (click)="itemSelected(category)">
+      {{ category.Name }} <ion-icon name="arrow-dropdown"></ion-icon> 
+        <ion-list *ngIf="category.show">
+          <ion-item *ngFor="let category_child of category.children" (click)="itemSelected(category_child);$event.stopPropagation();">
+            {{ category_child.Name }} <ion-icon name="arrow-dropdown"></ion-icon>
+            <ion-list *ngIf="category_child.show">
+                <ion-item *ngFor="let product of category_child.products" (click)="addProduct(product);$event.stopPropagation();">
+                  {{ product.Name }} 
                 </ion-item>  
-              </ion-list> 
+            </ion-list> 
           </ion-item>  
         </ion-list>
     </ion-item>  

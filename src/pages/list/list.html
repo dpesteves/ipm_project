@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>list</ion-title>
+    <ion-title>{{this.list_name}} - {{this.shop.getList(this.list_name).calculateTotalPrice()}}€</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -20,14 +20,19 @@
       <ion-thumbnail item-start>
         <img src={{product.Icon}}>
       </ion-thumbnail>
-      <h2>{{product.Name}}</h2>
-      <p>{{product.Price}}</p>
-      <button ion-button clear item-end>View</button>
+      <h2>{{product.Name}}</h2> 
+      <p>x{{product.Quantity}}</p>
+      <br>
+      <p>{{product.Price}}€</p>
+      <button ion-button clear item-end (click)="showProductDetail(product.Name)" >View</button>
       <button ion-button item-end (click)="removeItem(product.Name)" >Remove</button>
     </ion-item>
   </ion-list>
   <ion-fab center bottom>
     <button ion-fab mini (click)="showMenu()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-fab right bottom>
+    <button class="price">Price estimate: {{this.shop.getList(this.list_name).calculateTotalPrice()}}€</button>
   </ion-fab>
 
 </ion-content>

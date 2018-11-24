@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
 import { AddProductPage } from '../add-product/add-product';
 import { ProductModel } from '../../app/models/product-model';
+import {ShopModel} from '../../app/models/shop-model';
+import {ProductDetailPage} from '../../pages/product-detail/product-detail'
 
 @IonicPage()
 @Component({
@@ -10,10 +12,15 @@ import { ProductModel } from '../../app/models/product-model';
 })
 export class ListPage {
 
-  products: ProductModel[];
+  list_name: string;
+  shop: ShopModel;
+  products: Array<ProductModel>;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams/*, list: ShoppingListModel*/) {
-    this.products = this.navParams.data;
+    this.list_name = this.navParams.get('list');
+    this.shop = this.navParams.get('shop');
+    this.products = this.getListItems();
+
   }
 
   ionViewDidLoad() {
@@ -21,28 +28,45 @@ export class ListPage {
   }
 
   showMenu(){
-    const modal = this.modalCtrl.create(AddProductPage);
+    const modal = this.modalCtrl.create(AddProductPage, {
+      shop: this.shop
+    });
+
     modal.present();
+
+    modal.onDidDismiss(data => {
+      if(data != null)
+        this.shop.getList(this.list_name).addItem(data);
+    })
+
   }
 
-  loadList(list){
-    this.products = list;
+  getListItems(): Array<ProductModel>{
+
+    var local_list = this.shop.getList(this.list_name);
+    return local_list.getElements();
   }
 
-  removeItem(product_name){
+  removeItem(product_name: string){
 
-    debugger;
-    var index = 0;
+    this.shop.getList(this.list_name).removeItem(product_name);
 
-    for(let product of this.products){
+    this.shop.removeListProduct(this.list_name, product_name);
 
-      if(product.Name == product_name){
-        this.products.splice(index, 1);
-        break;
-      }else
-        index++;
+  }
+
+  showProductDetail(name: string){
+    let arg;
+    for (let product of this.products){
+      if(name == product.Name)
+        arg=product;
     }
-
+    if(arg != null)
+      this.navCtrl.push(ProductDetailPage, {
+        product: arg,
+      });
+    else
+      this.navCtrl.push(ProductDetailPage);
   }
   
 }

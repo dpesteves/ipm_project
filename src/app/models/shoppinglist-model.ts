@@ -2,16 +2,24 @@ import { ProductModel } from "./product-model";
 
 export class ShoppingListModel {
     
-    items: ProductModel[];
-    counter: number;
+    public static FAMILY = "Familia";
+    public static FRIENDS = "Amigos";
+    public static WORK = "Trabalho";
+
+    items: Array<ProductModel>;
     name: string;
     createdOn: Date;
     owners: any[];
+    total_price: number;
     
     constructor(title: string){
         this.name = title;
         this.items = new Array<ProductModel>();
-        this.counter = 0;
+        this.total_price = 0;
+    }
+
+    getListName(){
+        return this.name;
     }
 
     setName(name){
@@ -19,13 +27,18 @@ export class ShoppingListModel {
     }
 
     addItem(product: ProductModel){
-        this.items[this.counter] = product;
-        this.counter++;
+        this.items.push(product);
+        this.total_price += product.Price;
     }
 
-    removeItem(item){
+    removeItem(item_name: string){
+
+        var product = null;
+
         for(let i = 0; i < this.items.length; i++) {
-            if(this.items[i] == item){
+            if(this.items[i].Name == item_name){
+                product = this.items[i];
+                this.total_price -= product.Price;
                 this.items.splice(i, 1);
             }
         }
@@ -45,6 +58,21 @@ export class ShoppingListModel {
 
     getElements(){
         return this.items;
+    }
+
+    bullkAdd(products_in : Array<ProductModel>){
+        this.items = products_in;
+    }
+
+    calculateTotalPrice(): number{
+
+        var total_price = 0;
+
+        for(let element of this.items){
+            total_price += element.Price;
+        }
+
+        return total_price;
     }
        
 }
