@@ -12,19 +12,6 @@
 
 </ion-header>
 
-<html>
-  <head>
-    <link rel="stylesheet" href="statistics.scss">
-    <title>Bar Chart</title>
-  </head>
-  <body>
-    <h1>Bar Chart using d3.js</h1>
-    <svg class="bar-chart"></svg>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="createChart.ts"></script>
-  </body>
-</html>
-
 <ion-content padding>
   <div padding>
     <ion-segment [(ngModel)]="Statistics">
@@ -48,19 +35,51 @@
             <ion-option value="grocery">Grocery</ion-option>
           </ion-select>
         </ion-item>
-      </ion-list>      
+      </ion-list> 
       <ion-list>
           <ion-item>
             <ion-label>Choose frequency</ion-label>
             <ion-select [(ngModel)]="Frequency">
               <ion-option value="perday">By day</ion-option>
-              <ion-option value="grocery">By month</ion-option>
-              <ion-option value="grocery">By year</ion-option>
+              <ion-option value="permonth">By month</ion-option>
+              <ion-option value="peryear">By year</ion-option>
             </ion-select>
           </ion-item>
+          <ion-card>
+            <ion-card-header>
+              Collumn Chart
+            </ion-card-header>
+            <ion-card-content>
+              <canvas #barCanvas></canvas>
+            </ion-card-content>
+        </ion-card>        
+      </ion-list>
+      <ion-list *ngSwitchCase="'Supermarket'">
+        <ion-item>
+       <!--  <ion-thumbnail item-start>
+            <img src="img/thumbnail-puppy-1.jpg">
+          </ion-thumbnail>
+          <h2>Ruby</h2> -->
+        </ion-item> 
+        <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+        <ion-card> 
+          <ion-card-header>
+            Pie Chart
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #pieCanvas></canvas>
+          </ion-card-content>
+      </ion-card>  
       </ion-list>
     </ion-list>
   </div>
 </ion-content>
+
+<!--  cria o grafico de colunas
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+      cria o grafico de "pizza"
+<div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+
+-->
 
 
