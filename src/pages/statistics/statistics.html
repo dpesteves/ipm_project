@@ -40,9 +40,9 @@
           <ion-item>
             <ion-label>Choose frequency</ion-label>
             <ion-select [(ngModel)]="Frequency">
-              <ion-option value="perday">By day</ion-option>
-              <ion-option value="grocery">By month</ion-option>
-              <ion-option value="grocery">By year</ion-option>
+              <ion-option value="daily">Daily</ion-option>
+              <ion-option value="monthly">Monthly</ion-option>
+              <ion-option value="yearly">Yearly</ion-option>
             </ion-select>
           </ion-item>
       </ion-list>
@@ -54,15 +54,6 @@
             <canvas #barCanvas></canvas>
           </ion-card-content>
       </ion-card>        
-    </ion-list>
-    <ion-list *ngSwitchCase="'puppies'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail>
-        <h2>Ruby</h2>
-      </ion-item>
-      ...
     </ion-list>
   </div>
 </ion-content>

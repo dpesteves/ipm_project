@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 import { StatisticsPage } from '../pages/statistics/statistics';
-import { ContactPage } from '../pages/contact/contact';
+import { DiscountsPage } from '../pages/discounts/discounts';
 import { ListsPage } from '../pages/lists/lists';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ListPage } from '../pages/list/list';
 import { AddProductPage } from '../pages/add-product/add-product';
 import { AddListPage } from '../pages/add-list/add-list';
-import {ProductDetailPage} from '../pages/product-detail/product-detail';
+import { ProductDetailPage } from '../pages/product-detail/product-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +26,7 @@ import { HttpModule } from '@angular/http';
   declarations: [
     AppComponent,
     StatisticsPage,
-    ContactPage,
+    DiscountsPage,
     ListsPage,
     TabsPage,
     ListPage,
@@ -44,7 +44,7 @@ import { HttpModule } from '@angular/http';
   entryComponents: [
     AppComponent,
     StatisticsPage,
-    ContactPage,
+    DiscountsPage,
     ListsPage,
     TabsPage,
     ListPage,

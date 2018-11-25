@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ProductModel } from '../../app/models/product-model';
 import { CategoryModel } from '../../app/models/category-model';
 import { ShopModel } from '../../app/models/shop-model';
-
-interface Item {
-  name: string,
-  show: boolean
-}
 
 @IonicPage()
 @Component({
@@ -35,9 +30,5 @@ export class AddProductPage {
   addProduct(product: ProductModel){
     this.viewCtrl.dismiss(product);
   }
-
-  createProducts(){
-
-  }
-
+  
 }
