@@ -15,7 +15,7 @@ export class CategoryModel {
     //#endregion
 
     //#region Root Constants
-    public static DARRY_ROOT = "Darry Products";
+    public static DAIRY_ROOT = "Dairy Products";
     public static BEVERAGES_ROOT = "Beverages";
     public static SWEETS_SNACKS_ROOT = "Sweets and Snacks";
     //#endregion

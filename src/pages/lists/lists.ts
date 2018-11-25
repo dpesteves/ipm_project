@@ -4,7 +4,7 @@ import { ListPage } from '../list/list';
 import { AddListPage } from '../add-list/add-list';
 import { ShoppingListModel } from '../../app/models/shoppinglist-model';
 import { CategoryModel } from '../../app/models/category-model';
-import {ShopModel} from '../../app/models/shop-model'
+import { ShopModel } from '../../app/models/shop-model'
 
 @Component({
   selector: 'page-lists',
@@ -15,11 +15,7 @@ export class ListsPage {
   shop: ShopModel;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public params: NavParams) {
-    
-    this.shop = new ShopModel();
-
-    //console.log(this.shop.lists[0]);
-
+    this.shop = this.params.get('shop');
   }
 
   showList(name: string){

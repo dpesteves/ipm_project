@@ -32,7 +32,7 @@
     <button ion-fab mini (click)="showMenu()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <ion-fab right bottom>
-    <button class="price">Price estimate: {{this.shop.getList(this.list_name).calculateTotalPrice()}}€</button>
+    <button class="price">Total: {{this.shop.getList(this.list_name).calculateTotalPrice()}}€</button>
   </ion-fab>
 
 </ion-content>

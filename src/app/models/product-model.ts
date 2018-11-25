@@ -1,5 +1,3 @@
-import{ CategoryModel} from './category-model';
-
 export class ProductModel {
 
     Name: string;
@@ -9,8 +7,9 @@ export class ProductModel {
     Icon: string;
     Quantity: number;
     initial_price: number;
+    discount: number;
 
-    constructor(title: string, category: string, price: number, supermarket: string, icon: string){
+    constructor(title: string, category: string, price: number, supermarket: string, icon: string, discount: number){
         this.Name = title;
         this.Category_id = category;
         this.Price = price;
@@ -18,6 +17,7 @@ export class ProductModel {
         this.Icon = icon;
         this.Quantity = 1;
         this.initial_price = price;
+        this.discount = discount;
     }
     
     addQuantity(){

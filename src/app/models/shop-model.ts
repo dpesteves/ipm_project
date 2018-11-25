@@ -1,6 +1,6 @@
 import{ CategoryModel} from './category-model';
 import{ ProductModel} from './product-model';
-import{ShoppingListModel} from './shoppinglist-model';
+import{ ShoppingListModel } from './shoppinglist-model';
 
 export class ShopModel{
 
@@ -9,6 +9,8 @@ export class ShopModel{
     category_leafs: Array<CategoryModel>;
     category_nodes: Array<CategoryModel>;
     category_roots: Array<CategoryModel>;
+
+    discounts: Array<ProductModel>;
 
     //#region Products
     cookie_products: Array<ProductModel>;
@@ -45,61 +47,66 @@ export class ShopModel{
         this.category_roots = new Array<CategoryModel>();  
         //#endregion
 
+        //#region Initializing discounts
+        this.discounts = new Array<ProductModel>();
+        //#endregion
+
         this.createProducts();
         this.buildCategoryLeafs();
         this.buildCategoryRoots();
         this.buildDemoLists();
+        this.buildDiscounts();
 
     }
 
     createProducts(){
-        this.cookie_products.push(new ProductModel("Oreo - Continente", "Cookies", 2.5, "Continente", "empty"));
-        this.cookie_products.push(new ProductModel("Oreo - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty"));
-        this.cookie_products.push(new ProductModel("Oreo - Lidl", "Cookies", 1.5, "Lidl", "empty"));
+        this.cookie_products.push(new ProductModel("Oreo - Continente", "Cookies", 2.5, "Continente", "empty", 0));
+        this.cookie_products.push(new ProductModel("Oreo - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty", 0));
+        this.cookie_products.push(new ProductModel("Oreo - Lidl", "Cookies", 1.5, "Lidl", "empty", 0));
 
-        this.cookie_products.push(new ProductModel("Filipinos - Continente", "Cookies", 2.5, "Continente", "empty"));
-        this.cookie_products.push(new ProductModel("Filipinos - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty"));
-        this.cookie_products.push(new ProductModel("Filipinos - Lidl", "Cookies", 1.5, "Lidl", "empty"));
+        this.cookie_products.push(new ProductModel("Filipinos - Continente", "Cookies", 2.5, "Continente", "empty", 20));
+        this.cookie_products.push(new ProductModel("Filipinos - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty", 0));
+        this.cookie_products.push(new ProductModel("Filipinos - Lidl", "Cookies", 1.5, "Lidl", "empty", 0));
 
-        this.cookie_products.push(new ProductModel("Chipmix - Continente", "Cookies", 2.5, "Continente", "empty"));
-        this.cookie_products.push(new ProductModel("Chipmix - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty"));
-        this.cookie_products.push(new ProductModel("Chipmix - Lidl", "Cookies", 1.5, "Lidl", "empty"));
+        this.cookie_products.push(new ProductModel("Chipmix - Continente", "Cookies", 2.5, "Continente", "empty", 0));
+        this.cookie_products.push(new ProductModel("Chipmix - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty", 30));
+        this.cookie_products.push(new ProductModel("Chipmix - Lidl", "Cookies", 1.5, "Lidl", "empty", 0));
 
-        this.soda_products.push(new ProductModel("Sumol - Continente", "Soda", 1.75, "Continente", "../../assets/imgs/3.jpg"));
-        this.soda_products.push(new ProductModel("Sumol - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty"));
-        this.soda_products.push(new ProductModel("Sumol - Lidl", "Soda", 1.75, "Lidl", "empty"));
+        this.soda_products.push(new ProductModel("Sumol - Continente", "Soda", 1.75, "Continente", "../../assets/imgs/3.jpg", 0));
+        this.soda_products.push(new ProductModel("Sumol - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty", 0));
+        this.soda_products.push(new ProductModel("Sumol - Lidl", "Soda", 1.75, "Lidl", "empty", 0));
 
-        this.soda_products.push(new ProductModel("Coca Cola - Continente", "Soda", 1.75, "Continente", "empty"));
-        this.soda_products.push(new ProductModel("Coca Cola - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty"));
-        this.soda_products.push(new ProductModel("Coca Cola - Lidl", "Soda", 1.75, "Lidl", "empty"));
+        this.soda_products.push(new ProductModel("Coca Cola - Continente", "Soda", 1.75, "Continente", "empty", 0));
+        this.soda_products.push(new ProductModel("Coca Cola - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty", 0));
+        this.soda_products.push(new ProductModel("Coca Cola - Lidl", "Soda", 1.75, "Lidl", "empty", 0));
 
-        this.soda_products.push(new ProductModel("Lipton Ice Tea - Continente", "Soda", 1.75, "Continente", "empty"));
-        this.soda_products.push(new ProductModel("Lipton Ice Tea - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty"));
-        this.soda_products.push(new ProductModel("Lipton Ice Tea - Lidl", "Soda", 1.75, "Lidl", "empty"));
+        this.soda_products.push(new ProductModel("Lipton Ice Tea - Continente", "Soda", 1.75, "Continente", "empty", 0));
+        this.soda_products.push(new ProductModel("Lipton Ice Tea - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty", 0));
+        this.soda_products.push(new ProductModel("Lipton Ice Tea - Lidl", "Soda", 1.75, "Lidl", "empty", 50));
 
-        this.cheese_products.push(new ProductModel("Cheese - Continente", "Cheese", 1.0, "Continente", "empty"));
-        this.cheese_products.push(new ProductModel("Cheese - Pingo Doce", "Cheese", 1.0, "Pingo Doce", "empty"));
-        this.cheese_products.push(new ProductModel("Cheese - Lidl", "Cheese", 1.0, "Lidl", "empty"));
+        this.cheese_products.push(new ProductModel("Cheese - Continente", "Cheese", 1.0, "Continente", "empty", 0));
+        this.cheese_products.push(new ProductModel("Cheese - Pingo Doce", "Cheese", 1.0, "Pingo Doce", "empty", 0));
+        this.cheese_products.push(new ProductModel("Cheese - Lidl", "Cheese", 1.0, "Lidl", "empty", 15));
 
-        this.milk_products.push(new ProductModel("Milk - Continente", "Milk", 1.5, "Continente", "empty"));
-        this.milk_products.push(new ProductModel("Milk - Pingo Doce", "Milk", 1.5, "Pingo Doce", "empty"));
-        this.milk_products.push(new ProductModel("Milk - Lidl", "Milk", 1.5, "Lidl", "empty"));
+        this.milk_products.push(new ProductModel("Milk - Continente", "Milk", 1.5, "Continente", "empty", 0));
+        this.milk_products.push(new ProductModel("Milk - Pingo Doce", "Milk", 1.5, "Pingo Doce", "empty", 0));
+        this.milk_products.push(new ProductModel("Milk - Lidl", "Milk", 1.5, "Lidl", "empty", 0));
 
-        this.yougurt_products.push(new ProductModel("Yougurt - Continente", "Yougurt", 0.75, "Continente", "empty"));
-        this.yougurt_products.push(new ProductModel("Yougurt - Pingo Doce", "Yougurt", 1.0, "Pingo Doce", "empty"));
-        this.yougurt_products.push(new ProductModel("Yougurt - Lidl", "Yougurt", 0.50, "Lidl", "empty"));
+        this.yougurt_products.push(new ProductModel("Yougurt - Continente", "Yougurt", 0.75, "Continente", "empty", 0));
+        this.yougurt_products.push(new ProductModel("Yougurt - Pingo Doce", "Yougurt", 1.0, "Pingo Doce", "empty", 0));
+        this.yougurt_products.push(new ProductModel("Yougurt - Lidl", "Yougurt", 0.50, "Lidl", "empty", 10));
 
-        this.beer_products.push(new ProductModel("Super Bock - Continente", "Beer and Wine", 0.50, "Continente", "empty"));
-        this.beer_products.push(new ProductModel("Super Bock - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "empty"));
-        this.beer_products.push(new ProductModel("Super Bock - Lidl", "Beer and Wine", 0.20, "Lidl", "empty"));
+        this.beer_products.push(new ProductModel("Super Bock - Continente", "Beer and Wine", 0.50, "Continente", "empty", 0));
+        this.beer_products.push(new ProductModel("Super Bock - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "empty", 0));
+        this.beer_products.push(new ProductModel("Super Bock - Lidl", "Beer and Wine", 0.20, "Lidl", "empty", 0));
 
-        this.beer_products.push(new ProductModel("Sagres - Continente", "Beer and Wine", 0.50, "Continente", "empty"));
-        this.beer_products.push(new ProductModel("Sagres - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "empty"));
-        this.beer_products.push(new ProductModel("Sagres - Lidl", "Beer and Wine", 0.20, "Lidl", "empty"));
+        this.beer_products.push(new ProductModel("Sagres - Continente", "Beer and Wine", 0.50, "Continente", "empty", 0));
+        this.beer_products.push(new ProductModel("Sagres - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "empty", 0));
+        this.beer_products.push(new ProductModel("Sagres - Lidl", "Beer and Wine", 0.20, "Lidl", "empty", 0));
 
-        this.wine_products.push(new ProductModel("Porto - Continente", "Beer and Wine", 10, "Continente", "empty"));
-        this.wine_products.push(new ProductModel("Porto - Pingo Doce", "Beer and Wine", 15, "Pingo Doce", "empty"));
-        this.wine_products.push(new ProductModel("Porto - Lidl", "Beer and Wine", 7, "Lidl", "empty"));
+        this.wine_products.push(new ProductModel("Porto - Continente", "Beer and Wine", 10, "Continente", "empty", 0));
+        this.wine_products.push(new ProductModel("Porto - Pingo Doce", "Beer and Wine", 15, "Pingo Doce", "empty", 30));
+        this.wine_products.push(new ProductModel("Porto - Lidl", "Beer and Wine", 7, "Lidl", "empty", 0));
     }
 
     buildCategoryLeafs(){
@@ -134,13 +141,13 @@ export class ShopModel{
         
         
     buildCategoryRoots(){
-        var category = new CategoryModel(CategoryModel.DARRY_ROOT, CategoryModel.ROOT);
+        var category = new CategoryModel(CategoryModel.DAIRY_ROOT, CategoryModel.ROOT);
         category.addChild(this.findCategory(CategoryModel.MILK_LEAF, this.category_leafs)); //MILK
         category.addChild(this.findCategory(CategoryModel.Cheese_LEAF, this.category_leafs)); //Cheese
         category.addChild(this.findCategory(CategoryModel.YOUGURT_LEAF, this.category_leafs)); //Yougurt
         this.category_roots.push(category);
     
-        var category = new CategoryModel(CategoryModel.SWEETS_SNACKS_ROOT, CategoryModel.ROOT);
+        category = new CategoryModel(CategoryModel.SWEETS_SNACKS_ROOT, CategoryModel.ROOT);
         category.addChild(this.findCategory(CategoryModel.COOKIES_LEAF, this.category_leafs)); //Cookies
         this.category_roots.push(category);
     
@@ -161,6 +168,43 @@ export class ShopModel{
         this.lists[1].bullkAdd(this.beer_products);
         this.lists[2].bullkAdd(this.cheese_products);
     
+    }
+
+    buildDiscounts(){
+        for(let element of this.beer_products){
+            if(element.discount > 0)
+                this.discounts.push(element);
+        }
+
+        for(let element of this.cheese_products){
+            if(element.discount > 0)
+                this.discounts.push(element);
+        }
+
+        for(let element of this.cookie_products){
+            if(element.discount > 0)
+                this.discounts.push(element);
+        }
+
+        for(let element of this.milk_products){
+            if(element.discount > 0)
+                this.discounts.push(element);
+        }
+
+        for(let element of this.soda_products){
+            if(element.discount > 0)
+                this.discounts.push(element);
+        }
+
+        for(let element of this.wine_products){
+            if(element.discount > 0)
+                this.discounts.push(element);
+        }
+
+        for(let element of this.yougurt_products){
+            if(element.discount > 0)
+                this.discounts.push(element);
+        }
     }
 
     findCategory(category_name: string, category_level: Array<CategoryModel>): CategoryModel{
@@ -199,5 +243,5 @@ export class ShopModel{
 
         list.removeItem(product_name);
     }
-    
+
 }
