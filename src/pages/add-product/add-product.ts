@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController} from 'ionic-angula
 import { ProductModel } from '../../app/models/product-model';
 import { CategoryModel } from '../../app/models/category-model';
 import { ShopModel } from '../../app/models/shop-model';
+import { constructor } from 'chart.js';
 
 interface Item {
   name: string,
