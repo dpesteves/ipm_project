@@ -18,9 +18,16 @@ export class DiscountsPage {
   constructor(public navCtrl: NavController, public params: NavParams) {
     this.shop = this.params.get('shop');
     this.discounts = this.shop.discounts;
+    this.list = "";
   }
 
   addToList(product: ProductModel){
+    debugger;
     this.shop.getList(this.list).addItem(product);
+  }
+
+  mySelectHandler(event){
+    debugger;
+    this.list = event.name;
   }
 }

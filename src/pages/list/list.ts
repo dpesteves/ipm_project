@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ModalController, NavParams } from 'ionic-angular';
 import { AddProductPage } from '../add-product/add-product';
 import { ProductModel } from '../../app/models/product-model';
-import {ShopModel} from '../../app/models/shop-model';
-import {ProductDetailPage} from '../../pages/product-detail/product-detail'
+import { ShopModel } from '../../app/models/shop-model';
+import { ProductDetailPage } from '../../pages/product-detail/product-detail'
 
 @IonicPage()
 @Component({

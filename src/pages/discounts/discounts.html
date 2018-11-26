@@ -12,13 +12,13 @@
       <ion-col col-6 *ngFor="let product of discounts">
         <ion-card>
           <ion-card-header>
-            {{product.Name}}
+            <b> -{{product.discount}}%  {{product.Name}}</b>
           </ion-card-header>
           <ion-card-content>
             <ion-item>
               <ion-label>list</ion-label>
-              <ion-select [(ngModel)]="list">
-                <ion-option *ngFor="let l of shop.lists" value="l.name">{{l.name}}</ion-option>
+              <ion-select ngModel (ngModelChange)="mySelectHandler($event)">
+                <ion-option *ngFor="let l of shop.lists" [value]="l">{{l.name}}</ion-option>
               </ion-select>
             </ion-item>
             <button ion-button (click)=addToList(product)>Add To List</button>

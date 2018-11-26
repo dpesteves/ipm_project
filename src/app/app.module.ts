@@ -22,6 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 
 import { ChartsModule } from 'ng2-charts';
+import { DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { ChartsModule } from 'ng2-charts';
   providers: [
     StatusBar,
     SplashScreen,
+    DecimalPipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

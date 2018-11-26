@@ -69,7 +69,7 @@ export class ShoppingListModel {
         var total_price = 0;
 
         for(let element of this.items){
-            total_price += ((element.Price*element.discount)/100);
+            total_price += element.Price;
         }
 
         return total_price;
