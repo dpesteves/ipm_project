@@ -40,46 +40,71 @@
           <ion-item>
             <ion-label>Choose frequency</ion-label>
             <ion-select [(ngModel)]="Frequency">
-<<<<<<< HEAD
               <ion-option value="perday">By day</ion-option>
               <ion-option value="permonth">By month</ion-option>
               <ion-option value="peryear">By year</ion-option>
-=======
-              <ion-option value="daily">Daily</ion-option>
-              <ion-option value="monthly">Monthly</ion-option>
-              <ion-option value="yearly">Yearly</ion-option>
->>>>>>> 50a1cd8cef7d8ea3545dc2a1331108a1799f4ff4
             </ion-select>
           </ion-item>
           <ion-card>
             <ion-card-header>
               Collumn Chart
             </ion-card-header>
-            <ion-card-content>
-              <canvas #barCanvas></canvas>
-            </ion-card-content>
-        </ion-card>        
+            <ion-content padding>
+              <div class="row">
+                <div class="col-md-6">
+                  <div style="display: block;">
+                  <canvas baseChart width="300" height="400"
+                              [datasets]="lineChartData"
+                              [labels]="lineChartLabels"
+                              [options]="lineChartOptions"
+                              [colors]="lineChartColors"
+                              [legend]="lineChartLegend"
+                              [chartType]="lineChartType"
+                              (chartHover)="chartHovered($event)"
+                              (chartClick)="chartClicked($event)"></canvas>
+                  </div>
+                </div>
+              </div>
+            </ion-content>
+          </ion-card>        
       </ion-list>
       <ion-list *ngSwitchCase="'Supermarket'">
-        <ion-item>
-       <!--  <ion-thumbnail item-start>
+       <!--  <ion-item>
+         <ion-thumbnail item-start>
             <img src="img/thumbnail-puppy-1.jpg">
           </ion-thumbnail>
-          <h2>Ruby</h2> -->
-        </ion-item> 
-        <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+          <h2>Ruby</h2> 
+        </ion-item> -->
         <ion-card> 
           <ion-card-header>
             Pie Chart
           </ion-card-header>
-          <ion-card-content>
-            <canvas #pieCanvas></canvas>
-          </ion-card-content>
+          <ion-content padding>
+            <div style="display: block">
+              <canvas baseChart
+                          [data]="doughnutChartData"
+                          [labels]="doughnutChartLabels"
+                          [chartType]="doughnutChartType"
+                          (chartHover)="chartHovered($event)"
+                          (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </ion-content>
       </ion-card>  
       </ion-list>
     </ion-list>
   </div>
 </ion-content>
+
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
 
 <!--  cria o grafico de colunas
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>

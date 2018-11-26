@@ -21,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpModule } from '@angular/http';
 
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(AppComponent),
-    IonicImageViewerModule
+    IonicImageViewerModule,
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
