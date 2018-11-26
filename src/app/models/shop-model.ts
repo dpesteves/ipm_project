@@ -60,53 +60,53 @@ export class ShopModel{
     }
 
     createProducts(){
-        this.cookie_products.push(new ProductModel("Oreo - Continente", "Cookies", 2.5, "Continente", "empty", 0));
-        this.cookie_products.push(new ProductModel("Oreo - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty", 0));
-        this.cookie_products.push(new ProductModel("Oreo - Lidl", "Cookies", 1.5, "Lidl", "empty", 0));
+        this.cookie_products.push(new ProductModel("Oreo - Continente", "Cookies", 2.5, "Continente", "../../assets/imgs/oreocookies.jpg", 0));
+        this.cookie_products.push(new ProductModel("Oreo - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "../../assets/imgs/oreocookies.jpg", 0));
+        this.cookie_products.push(new ProductModel("Oreo - Lidl", "Cookies", 1.5, "Lidl", "../../assets/imgs/oreocookies.jpg", 0));
 
-        this.cookie_products.push(new ProductModel("Filipinos - Continente", "Cookies", 2.5, "Continente", "empty", 20));
-        this.cookie_products.push(new ProductModel("Filipinos - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty", 0));
-        this.cookie_products.push(new ProductModel("Filipinos - Lidl", "Cookies", 1.5, "Lidl", "empty", 0));
+        this.cookie_products.push(new ProductModel("Filipinos - Continente", "Cookies", 2.5, "Continente", "../../assets/imgs/filipinos.jpg", 20));
+        this.cookie_products.push(new ProductModel("Filipinos - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "../../assets/imgs/filipinos.jpg", 0));
+        this.cookie_products.push(new ProductModel("Filipinos - Lidl", "Cookies", 1.5, "Lidl", "../../assets/imgs/filipinos.jpg", 0));
 
-        this.cookie_products.push(new ProductModel("Chipmix - Continente", "Cookies", 2.5, "Continente", "empty", 0));
-        this.cookie_products.push(new ProductModel("Chipmix - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "empty", 30));
-        this.cookie_products.push(new ProductModel("Chipmix - Lidl", "Cookies", 1.5, "Lidl", "empty", 0));
+        this.cookie_products.push(new ProductModel("Chipmix - Continente", "Cookies", 2.5, "Continente", "../../assets/imgs/chipmix.jpg", 0));
+        this.cookie_products.push(new ProductModel("Chipmix - Pingo Doce", "Cookies", 2.5, "Pingo Doce", "../../assets/imgs/chipmix.jpg", 30));
+        this.cookie_products.push(new ProductModel("Chipmix - Lidl", "Cookies", 1.5, "Lidl", "../../assets/imgs/chipmix.jpg", 0));
 
-        this.soda_products.push(new ProductModel("Sumol - Continente", "Soda", 1.75, "Continente", "../../assets/imgs/3.jpg", 0));
-        this.soda_products.push(new ProductModel("Sumol - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty", 0));
-        this.soda_products.push(new ProductModel("Sumol - Lidl", "Soda", 1.75, "Lidl", "empty", 0));
+        this.soda_products.push(new ProductModel("Sumol - Continente", "Soda", 1.75, "Continente", "../../assets/imgs/sumol.jpg", 0));
+        this.soda_products.push(new ProductModel("Sumol - Pingo Doce", "Soda", 1.75, "Pingo Doce", "../../assets/imgs/sumol.jpg", 0));
+        this.soda_products.push(new ProductModel("Sumol - Lidl", "Soda", 1.75, "Lidl", "../../assets/imgs/sumol.jpg", 0));
 
-        this.soda_products.push(new ProductModel("Coca Cola - Continente", "Soda", 1.75, "Continente", "empty", 0));
-        this.soda_products.push(new ProductModel("Coca Cola - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty", 0));
-        this.soda_products.push(new ProductModel("Coca Cola - Lidl", "Soda", 1.75, "Lidl", "empty", 0));
+        this.soda_products.push(new ProductModel("Coca Cola - Continente", "Soda", 1.75, "Continente", "../../assets/imgs/coca_cola.jpg", 0));
+        this.soda_products.push(new ProductModel("Coca Cola - Pingo Doce", "Soda", 1.75, "Pingo Doce", "../../assets/imgs/coca_cola.jpg", 0));
+        this.soda_products.push(new ProductModel("Coca Cola - Lidl", "Soda", 1.75, "Lidl", "../../assets/imgs/coca_cola.jpg", 0));
 
-        this.soda_products.push(new ProductModel("Lipton Ice Tea - Continente", "Soda", 1.75, "Continente", "empty", 0));
-        this.soda_products.push(new ProductModel("Lipton Ice Tea - Pingo Doce", "Soda", 1.75, "Pingo Doce", "empty", 0));
-        this.soda_products.push(new ProductModel("Lipton Ice Tea - Lidl", "Soda", 1.75, "Lidl", "empty", 50));
+        this.soda_products.push(new ProductModel("Lipton Ice Tea - Continente", "Soda", 1.75, "Continente", "../../assets/imgs/ice_tea.jpg", 0));
+        this.soda_products.push(new ProductModel("Lipton Ice Tea - Pingo Doce", "Soda", 1.75, "Pingo Doce", "../../assets/imgs/ice_tea.jpg", 0));
+        this.soda_products.push(new ProductModel("Lipton Ice Tea - Lidl", "Soda", 1.75, "Lidl", "../../assets/imgs/ice_tea.jpg", 50));
 
-        this.cheese_products.push(new ProductModel("Cheese - Continente", "Cheese", 1.0, "Continente", "empty", 0));
-        this.cheese_products.push(new ProductModel("Cheese - Pingo Doce", "Cheese", 1.0, "Pingo Doce", "empty", 0));
-        this.cheese_products.push(new ProductModel("Cheese - Lidl", "Cheese", 1.0, "Lidl", "empty", 15));
+        this.cheese_products.push(new ProductModel("Cheese - Continente", "Cheese", 1.0, "Continente", "../../assets/imgs/queijo.jpg", 0));
+        this.cheese_products.push(new ProductModel("Cheese - Pingo Doce", "Cheese", 1.0, "Pingo Doce", "../../assets/imgs/queijo.jpg", 0));
+        this.cheese_products.push(new ProductModel("Cheese - Lidl", "Cheese", 1.0, "Lidl", "../../assets/imgs/queijo.jpg", 15));
 
-        this.milk_products.push(new ProductModel("Milk - Continente", "Milk", 1.5, "Continente", "empty", 0));
-        this.milk_products.push(new ProductModel("Milk - Pingo Doce", "Milk", 1.5, "Pingo Doce", "empty", 0));
-        this.milk_products.push(new ProductModel("Milk - Lidl", "Milk", 1.5, "Lidl", "empty", 0));
+        this.milk_products.push(new ProductModel("Milk - Continente", "Milk", 1.5, "Continente", "../../assets/imgs/milk.jpg", 0));
+        this.milk_products.push(new ProductModel("Milk - Pingo Doce", "Milk", 1.5, "Pingo Doce", "../../assets/imgs/milk.jpg", 0));
+        this.milk_products.push(new ProductModel("Milk - Lidl", "Milk", 1.5, "Lidl", "../../assets/imgs/milk.jpg", 0));
 
-        this.yougurt_products.push(new ProductModel("Yougurt - Continente", "Yougurt", 0.75, "Continente", "empty", 0));
-        this.yougurt_products.push(new ProductModel("Yougurt - Pingo Doce", "Yougurt", 1.0, "Pingo Doce", "empty", 0));
-        this.yougurt_products.push(new ProductModel("Yougurt - Lidl", "Yougurt", 0.50, "Lidl", "empty", 10));
+        this.yougurt_products.push(new ProductModel("Yougurt - Continente", "Yougurt", 0.75, "Continente", "../../assets/imgs/iogurte.jpg", 0));
+        this.yougurt_products.push(new ProductModel("Yougurt - Pingo Doce", "Yougurt", 1.0, "Pingo Doce", "../../assets/imgs/iogurte.jpg", 0));
+        this.yougurt_products.push(new ProductModel("Yougurt - Lidl", "Yougurt", 0.50, "Lidl", "../../assets/imgs/iogurte.jpg", 10));
 
-        this.beer_products.push(new ProductModel("Super Bock - Continente", "Beer and Wine", 0.50, "Continente", "empty", 0));
-        this.beer_products.push(new ProductModel("Super Bock - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "empty", 0));
-        this.beer_products.push(new ProductModel("Super Bock - Lidl", "Beer and Wine", 0.20, "Lidl", "empty", 0));
+        this.beer_products.push(new ProductModel("Super Bock - Continente", "Beer and Wine", 0.50, "Continente", "../../assets/imgs/super_bock.jpg", 0));
+        this.beer_products.push(new ProductModel("Super Bock - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "../../assets/imgs/super_bock.jpg", 0));
+        this.beer_products.push(new ProductModel("Super Bock - Lidl", "Beer and Wine", 0.20, "Lidl", "../../assets/imgs/super_bock.jpg", 0));
 
-        this.beer_products.push(new ProductModel("Sagres - Continente", "Beer and Wine", 0.50, "Continente", "empty", 0));
-        this.beer_products.push(new ProductModel("Sagres - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "empty", 0));
-        this.beer_products.push(new ProductModel("Sagres - Lidl", "Beer and Wine", 0.20, "Lidl", "empty", 0));
+        this.beer_products.push(new ProductModel("Sagres - Continente", "Beer and Wine", 0.50, "Continente", "../../assets/imgs/sagres.jpg", 0));
+        this.beer_products.push(new ProductModel("Sagres - Pingo Doce", "Beer and Wine", 0.50, "Pingo Doce", "../../assets/imgs/sagres.jpg", 0));
+        this.beer_products.push(new ProductModel("Sagres - Lidl", "Beer and Wine", 0.20, "Lidl", "../../assets/imgs/sagres.jpg", 0));
 
-        this.wine_products.push(new ProductModel("Porto - Continente", "Beer and Wine", 10, "Continente", "empty", 0));
-        this.wine_products.push(new ProductModel("Porto - Pingo Doce", "Beer and Wine", 15, "Pingo Doce", "empty", 30));
-        this.wine_products.push(new ProductModel("Porto - Lidl", "Beer and Wine", 7, "Lidl", "empty", 0));
+        this.wine_products.push(new ProductModel("Porto - Continente", "Beer and Wine", 10, "Continente", "../../assets/imgs/porto_wine.jpg", 0));
+        this.wine_products.push(new ProductModel("Porto - Pingo Doce", "Beer and Wine", 15, "Pingo Doce", "../../assets/imgs/porto_wine.jpg", 30));
+        this.wine_products.push(new ProductModel("Porto - Lidl", "Beer and Wine", 7, "Lidl", "../../assets/imgs/porto_wine.jpg", 0));
     }
 
     buildCategoryLeafs(){
