@@ -47,7 +47,7 @@
           </ion-item>
           <ion-card>
             <ion-card-header>
-              Collumn Chart
+              Drinks
             </ion-card-header>
             <ion-content padding>
               <div class="row">
@@ -69,24 +69,25 @@
           </ion-card>        
       </ion-list>
       <ion-list *ngSwitchCase="'Supermarket'">
-       <!--  <ion-item>
-         <ion-thumbnail item-start>
-            <img src="img/thumbnail-puppy-1.jpg">
-          </ion-thumbnail>
-          <h2>Ruby</h2> 
-        </ion-item> -->
         <ion-card> 
           <ion-card-header>
-            Pie Chart
+            Line Chart
           </ion-card-header>
           <ion-content padding>
-            <div style="display: block">
-              <canvas baseChart
-                          [data]="doughnutChartData"
-                          [labels]="doughnutChartLabels"
-                          [chartType]="doughnutChartType"
-                          (chartHover)="chartHovered($event)"
-                          (chartClick)="chartClicked($event)"></canvas>
+            <div class="row">
+              <div class="col-md-6">
+                <div style="display: block;">
+                <canvas baseChart width="300" height="400"
+                            [datasets]="lineChartData2"
+                            [labels]="lineChartLabels2"
+                            [options]="lineChartOptions2"
+                            [colors]="lineChartColors2"
+                            [legend]="lineChartLegend2"
+                            [chartType]="lineChartType2"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                </div>
+              </div>
             </div>
           </ion-content>
       </ion-card>  
@@ -97,20 +98,8 @@
 
 
 
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
 
-<!--  cria o grafico de colunas
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
-      cria o grafico de "pizza"
-<div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
 
--->
 
 
