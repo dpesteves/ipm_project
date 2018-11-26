@@ -15,7 +15,7 @@ export class ShoppingListModel {
     constructor(title: string){
         this.name = title;
         this.items = new Array<ProductModel>();
-        this.total_price = 0;
+        this.calculateTotalPrice();
     }
 
     getListName(){
@@ -27,6 +27,7 @@ export class ShoppingListModel {
     }
 
     addItem(product: ProductModel){
+        debugger;
         this.items.push(product);
         this.total_price += product.Price;
     }
