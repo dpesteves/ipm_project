@@ -3,7 +3,6 @@ import { NavController, AlertController } from 'ionic-angular';
 import { ShopModel } from '../../app/models/shop-model';
 import { NavParams } from 'ionic-angular/navigation/nav-params';
 import { ProductModel } from '../../app/models/product-model';
-import { tickStep } from 'd3';
 
 @Component({
   selector: 'page-discounts',
