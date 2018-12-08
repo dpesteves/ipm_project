@@ -20,7 +20,6 @@ export class ListPage {
     this.list_name = this.navParams.get('list');
     this.shop = this.navParams.get('shop');
     this.products = this.getListItems();
-
   }
 
   ionViewDidLoad() {
@@ -28,31 +27,31 @@ export class ListPage {
   }
 
   showMenu(){
+    debugger;
     const modal = this.modalCtrl.create(AddProductPage, {
-      shop: this.shop
+      shop: this.shop,
+      list: this.shop.getList(this.list_name),
     });
 
     modal.present();
 
     modal.onDidDismiss(data => {
-      if(data != null)
-        this.shop.getList(this.list_name).addItem(data);
-    })
+      for(let c of this.shop.category_roots)
+        c.show = false;
+      for(let c of this.shop.category_nodes)
+        c.show = false;
+      })
 
   }
 
   getListItems(): Array<ProductModel>{
-
     var local_list = this.shop.getList(this.list_name);
     return local_list.getElements();
   }
 
   removeItem(product_name: string){
-
     this.shop.getList(this.list_name).removeItem(product_name);
-
     this.shop.removeListProduct(this.list_name, product_name);
-
   }
 
   showProductDetail(name: string){
@@ -68,5 +67,11 @@ export class ListPage {
     else
       this.navCtrl.push(ProductDetailPage);
   }
-  
+
+  existsProductOnList(name: string) {
+    for(let item of this.products)
+      if(item.Name == name)
+        return true;
+    return false;
+  }
 }

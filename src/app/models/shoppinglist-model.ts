@@ -27,9 +27,12 @@ export class ShoppingListModel {
     }
 
     addItem(product: ProductModel){
-        debugger;
-        this.items.push(product);
-        this.total_price += product.Price;
+        if(!this.existsProductInList(product.Name)){
+            this.items.push(product);
+            this.total_price += product.Price;
+        }
+        else
+            product.addQuantity();
     }
 
     removeItem(item_name: string){
@@ -66,14 +69,17 @@ export class ShoppingListModel {
     }
 
     calculateTotalPrice(): number{
-
         var total_price = 0;
-
         for(let element of this.items){
             total_price += element.Price;
         }
-
         return total_price;
     }
        
+    existsProductInList(name: string){
+        for(let item of this.items)
+          if(item.Name == name)
+            return true;
+        return false;
+    }
 }

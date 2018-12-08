@@ -25,6 +25,7 @@ export class ProductModel {
     
     addQuantity(){
         this.Quantity++;
+        this.Price = this.initial_price * this.Quantity;
     }
 
     editQuantity(val){
