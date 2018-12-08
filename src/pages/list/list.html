@@ -1,6 +1,7 @@
 <ion-header>
   <ion-navbar style="text-align: center">
     <ion-title>{{this.list_name}} - {{this.shop.getList(this.list_name).calculateTotalPrice() | number:'1.0-2'}}€</ion-title>
+    <ion-buttons end> <ion-icon class="share" name="person-add" style="float: right"></ion-icon></ion-buttons>
   </ion-navbar>
 </ion-header>
 
