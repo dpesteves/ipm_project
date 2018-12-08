@@ -20,8 +20,11 @@
             {{ category_child.Name }} <ion-icon name="arrow-dropdown"></ion-icon>
             <ion-list *ngIf="category_child.show">
                 <ion-item *ngFor="let product of category_child.products" (click)="addProduct(product);$event.stopPropagation();">
-                  {{ product.Name }} 
-                </ion-item>  
+                  {{ product.Name }}
+                  <ion-thumbnail item-start>
+                    <img src={{product.Icon}}>
+                  </ion-thumbnail>                                    
+                </ion-item>                  
             </ion-list> 
           </ion-item>  
         </ion-list>
